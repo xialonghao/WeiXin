@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>省市区三级联合</title>
+<script type="text/JavaScript" src='__STATIC__/js/jquery.min.js'></script>
+<script type="text/JavaScript" src='__STATIC__/js/bootstrap.min.js'></script>
+<script type="text/JavaScript" src='__STATIC__/js/jquery.SuperSlide.2.1.1.js'></script>
+<script type="text/javascript" src="__STATIC__/js/common.js"></script>
+<script type="text/JavaScript" src='__STATIC__/layer/layer.js'></script>
+</head>
+
+<body>
+<select name="pro" id="pro">
+    {foreach item="pro" name="region"}
+        <option value="{$pro.id}" >
+            {$pro.region_name}
+        </option>
+    {/foreach}
+</select>
+<!-- 城市 -->
+<select name="city" id="city">
+    <option></option>
+</select>
+<!-- 区县 -->
+<select name="area" id="area">
+    <option></option>
+</select>
+
+<script type="text/javascript">
+$('#pro').change(function(){
+    $.ajax({
+        url:"http://www.tp5.com/san/index/pro",
+        type:"POST",
+        data:'pro_id='+$('#pro').val(),
+        success:function(data){
+            $('#city').html(data);
+        },
+		error:function(){
+			alert('fail');
+		}
+    });
+});
+$('#city').change(function(){
+    $.ajax({
+        url:"http://www.tp5.com/san/index/area",
+        type:"post",
+        data:'pro_id='+$('#city').val(),
+        success:function(data){
+            $('#area').html(data);
+        }
+    });
+});
+//function change(data) {
+//    $("#pro option").remove();  //清空省
+//    $("#city option").remove();      //清空市
+//    $("#area option").remove();
+//};
+</script>
+</body>
+</html>

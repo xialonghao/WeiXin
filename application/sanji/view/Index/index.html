@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>省市区三级联合</title>
+    <script type="text/JavaScript" src='__STATIC__js/jquery.min.js'></script>
+    <script type="text/JavaScript" src='__STATIC__js/bootstrap.min.js'></script>
+    <script type="text/JavaScript" src='__STATIC__js/jquery.SuperSlide.2.1.1.js'></script>
+    <script type="text/javascript" src="__STATIC__js/common.js"></script>
+    <script type="text/JavaScript" src='__STATIC__layer/layer.js'></script>
+</head>
+
+<body>
+<select id="province">
+    <option>--请选择--</option>>
+    {foreach item='plist' name="plist"}
+    <option value="{$plist.id}">{$plist.region_name}</option>
+    {/foreach}
+</select>
+
+    <select id="city">
+    <option class="spe">--请选择--</option>
+</select>
+
+<select id="area">
+    <option class="sspe">--请选择--</option>
+</select>
+<script type="text/javascript">
+    $('#province').change(function(){
+        $('.unspe').remove();
+        $('.unsspe').remove();
+        var parent_id=$(this).val();
+        $.ajax({
+            url:"{:url('Index/city')}",
+            type:"post",
+            data:{rid:parent_id},
+            success:function(data){
+                $(data).each(function(index,val){
+                    var option="<option value='"+val.id+"' class='unspe'>"+val.region_name+"</option>";
+                    $("#city").append(option);
+                });
+            },
+            error:function(){}
+        });
+    });
+    $('#city').change(function(){
+        var parent_id=$(this).val();
+        $.ajax({
+            url:"{:url('Index/city')}",
+            type:"post",
+            data:{rid:parent_id},
+            success:function(data){
+                $(data).each(function(index,val){
+                    var option="<option value='"+val.parent_id+"' class='unspe'>"+val.region_name+"</option>";
+                    $("#area").append(option);
+                });
+            },
+            error:function(){}
+        });
+    });
+</script>
+</body>
+<script type="text/javascript">
+    $($cq).click(fucntion(){
+        var id=$(this).val();
+        $.ajax({
+            url:"{:url('Index/city')}",
+            type:"POST",
+            data:{page:pages+1},
+            success:function(){},
+            error:function(){},
+        })
+;    });
+</script>
+</html>

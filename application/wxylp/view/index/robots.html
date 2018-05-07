@@ -1,0 +1,40 @@
+
+<body>
+	<div style="margin-left:200px;width:70px;height:30px;background-color:#00BB00;text-align: center;line-height:30px;border-radius:3px;margin-top:30px">
+	 <a href="#"  style="text-decoration: none;color: #fff;">添加</a>
+</div>
+
+<table width="800px" cellpadding="0" cellspacing="0" border="1" style="text-align: center;margin: 0 auto;margin-top:10px">
+    <tr style="color: #ADADAD">
+        <th>id</th>
+        <th>发送的内容</th>
+        <th>发送的图片</th>
+         <th>类型</th>
+           <th>时间</th>
+            <th>回复</th>
+        <th>操作</th>
+    </tr>
+     {foreach item="info" key="key" name="info"}
+    <tr style="background-color: #F0F0F0">
+        <td>{$key+1}</td>
+        <td>{$info.content}</td>
+        <td><img src="http://img1.imgtn.bdimg.com/it/u=2777610366,1217572045&fm=11&gp=0.jpg" width="130px" height="100px"></td>
+        <td>{$info.type}</td>
+        <td>{$info.inputtime|date='Y-m-d',###}</td>
+        <td>{$info.reply}</td>
+        <td>
+        <a href="#"  style="text-decoration: none;color:#f00">删除</a>&nbsp;|
+        <a href="#"  style="text-decoration: none;color:#0072E3">修改</a>
+        </td>
+    </tr>
+    {/foreach}
+    </table>
+    <div style="width:150px;margin-left:600px;margin-top: 20px;">
+    <span style='width: 70px;'><a href="#" style="color:#000;font-size: 18.5px;text-decoration:none">上一页</a></span>
+    <span style="width: 70px;"><a href="#" style="color:#000;font-size: 18.5px;text-decoration:none">下一页</a></span>
+    </div>
+
+
+</body>
+</html>
+

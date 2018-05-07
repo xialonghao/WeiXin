@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <title>自定义菜单创建页面</title>
+    <style>
+    .dark-matter {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+        background: #f4f4f4;
+        padding: 20px 30px 20px 30px;
+        font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #ddd;
+        text-shadow: 1px 1px 1px #444;
+        border: none;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+    .dark-matter h1 {
+        padding: 0px 0px 10px 40px;
+        display: block;
+        border-bottom: 1px solid #444;
+        margin: -10px -30px 30px -30px;
+    }
+    .dark-matter h1>span {
+        display: block;
+        font-size: 11px;
+    }
+    .input-label {
+        display: block;
+        margin: 0px 0px 0px;
+    }
+    .input-span {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .input-spanto {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-left: 120px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .input-left{
+        border: none;
+        color: #525252;
+        height: 25px;
+        line-height:15px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 5px 0px 5px 5px;
+        width: 30%;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background: #DFDFDF;
+    }
+    .input-leftto{
+        border: none;
+        color: #525252;
+        height: 25px;
+        line-height:15px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 5px 0px 5px 5px;
+        width: 20%;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background: #DFDFDF;
+    }
+    .input-select{
+        border: none;
+        color: #525252;
+        height: 25px;
+        line-height:15px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 5px 0px 5px 5px;
+        width: 10%;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background: #DFDFDF;
+    }
+    .dark-matter .button {
+        background: #f8d2d2;
+        border: none;
+        padding: 10px 25px 10px 25px;
+        color: #585858;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        text-shadow: 1px 1px 1px #FFE477;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px #3D3D3D;
+        -webkit-box-shadow:1px 1px 1px #3D3D3D;
+        -moz-box-shadow:1px 1px 1px #3D3D3D;
+    }
+    .dark-matter .button:hover {
+        color: #333;
+        background-color: #EBEBEB;
+    }
+    </style>
+    </head>
+    <body style="background: #f8d2d2">
+        <div style="margin-top:50px;"></div>
+        <form action="" method="post" class="dark-matter">
+            <h1>自定义菜单创建
+                <span>Create a custom menu......</span>
+            </h1>
+            <label class=" input-label">
+                <span class="input-span">一级菜单:</span>
+                <input class="input-left"  type="text" name="name" placeholder="一级菜单名称" />
+            </label>
+            <label class=" input-label">
+                <span class="input-span">类型 :</span>
+                <select class="input-select"  name="selection">
+                    <option value="click">click</option>
+                    <option value="General Question">view</option>
+                </select>
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto">二级菜单（一） :</span>
+                <input class="input-leftto"  type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto">类型 :</span>
+                <select class="input-select"  name="selection">
+                    <option value="click">click</option>
+                    <option value="General Question">view</option>
+                </select>
+            </label>
+             <label class=" input-label">
+                <span class="input-spanto"> Key / Url :</span>
+                <input class="input-leftto" id="keyurl1" type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto">二级菜单（二） :</span>
+                <input class="input-leftto"  type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto">类型 :</span>
+                <select class="input-select"  name="selection">
+                    <option value="click">click</option>
+                    <option value="General Question">view</option>
+                </select>
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto"> Key / Url :</span>
+                <input class="input-leftto" id="keyurl1" type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+
+            <label class=" input-label">
+                <span class="input-spanto">二级菜单（三） :</span>
+                <input class="input-leftto"  type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+            <label class=" input-label">
+                <span class="input-spanto">类型 :</span>
+                <select class="input-select"  name="selection">
+                    <option value="click">click</option>
+                    <option value="General Question">view</option>
+                </select>
+            </label>
+             <label class=" input-label">
+                <span class="input-spanto"> Key / Url :</span>
+                <input class="input-leftto" id="keyurl1" type="text" name="name" placeholder="二级菜单名称" />
+            </label>
+            <label>
+                <span>&nbsp;</span>
+                <input type="button" class="button" value="创建" />
+            </label>
+        </form>
+
+<div style="margin-top:50px;"></div>
+    </body>
+</html>

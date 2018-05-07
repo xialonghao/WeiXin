@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{:url('Index/do_chose')}" method="post">
+    <input name="teacher" value="1" {if condition="$info.teacher eq 1"} checked {/if} type="checkbox"/>教室
+    <input name="student" value="1" {if condition="$info.student eq 1"} checked {/if}  type="checkbox"/>学生
+    <input type="submit" name="sub" value="提交"/>
+</form>
+
+</body>
+</html>
